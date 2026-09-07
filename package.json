@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "preview": "NEXT_PUBLIC_BASE_PATH=/palmkaling next build && npx --yes serve out -l 4173",
-    "lint": "eslint"
+    "lint": "eslint",
+    "deploy": "bash scripts/deploy.sh"
   },
   "dependencies": {
     "next": "16.3.4",

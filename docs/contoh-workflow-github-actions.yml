@@ -1,3 +1,9 @@
+# CATATAN: berkas ini TIDAK aktif di lokasi ini. Untuk mengaktifkannya,
+# salin isinya ke .github/workflows/deploy.yml lewat editor web GitHub
+# (token CLI di komputer ini tidak punya scope "workflow" untuk
+# mendorong berkas Actions). Selama belum diaktifkan, deploy dilakukan
+# dengan `npm run deploy` yang mendorong hasil build ke branch gh-pages.
+
 # ============================================================
 #  DEPLOY KE GITHUB PAGES
 # ============================================================

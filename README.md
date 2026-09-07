@@ -89,25 +89,43 @@ berlaku untuk seluruh situs.
 
 ## Deploy
 
-Situs terbit otomatis ke **<https://sveroust.github.io/palmkaling/>**
-setiap kali ada push ke `main`, lewat `.github/workflows/deploy.yml`.
+Situs tinggal di **<https://sveroust.github.io/palmkaling/>**, disajikan
+dari branch `gh-pages`.
 
 ```bash
-git add -A
-git commit -m "pesan"
-git push
+npm run deploy
 ```
 
-Lalu tunggu. Build berjalan sekitar satu sampai dua menit; kemajuannya
-bisa dilihat di tab **Actions** repositori. **Halaman tidak berubah
-begitu di-refresh** — refresh baru menampilkan versi baru setelah build
-selesai. Kalau ingin melihat hasil editan seketika, pakai
-`npm run dev` di komputer sendiri; itu memang tempatnya.
+Satu perintah itu membangun situs lalu mendorong hasilnya ke
+`gh-pages`. Perubahan biasanya terlihat dalam satu sampai dua menit
+(GitHub perlu waktu menyebarkannya).
+
+**Yang perlu dipahami:** situs yang sudah terbit TIDAK ikut berubah
+hanya dengan me-refresh halaman. Refresh menampilkan versi baru
+setelah `npm run deploy` selesai. Yang berubah seketika saat kamu
+menyimpan berkas adalah `npm run dev` di komputer sendiri — di situlah
+tempat mengedit dan melihat hasilnya.
+
+Jadi alurnya: edit di `npm run dev` sampai puas → `git push` supaya
+kodenya tersimpan → `npm run deploy` supaya tautan yang kamu bagikan
+ikut berubah.
+
+`gh-pages` diperlakukan sebagai keluaran, bukan riwayat: tiap deploy
+menimpanya. Riwayat yang penting ada di `main`.
+
+### Kalau mau deploy otomatis tiap push
+
+Salin isi `docs/contoh-workflow-github-actions.yml` ke
+`.github/workflows/deploy.yml` lewat editor web GitHub, lalu ubah
+sumber Pages ke **GitHub Actions** di Settings → Pages. Sesudah itu
+`npm run deploy` tidak diperlukan lagi — cukup `git push`. Berkas itu
+tidak bisa didorong dari komputer ini karena token CLI-nya tidak punya
+scope `workflow`.
 
 ### Kalau nanti pakai domain sendiri
 
-Kosongkan `NEXT_PUBLIC_BASE_PATH` dan sesuaikan `NEXT_PUBLIC_SITE_URL`
-di `.github/workflows/deploy.yml`, lalu daftarkan domainnya di
+Ubah `BASE` dan `SITE` di `scripts/deploy.sh` (kosongkan `BASE`), lalu
+daftarkan domainnya di
 **Settings → Pages → Custom domain**. Tidak ada kode yang perlu diubah —
 awalan alamat memang sengaja dibuat lewat variabel lingkungan supaya
 pindah domain tidak menyentuh satu berkas sumber pun.
