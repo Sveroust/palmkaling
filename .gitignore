@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Catatan internal — JANGAN masuk repo publik.
+# Isinya status izin, angka yang masih perkiraan, dan alasan di balik
+# keputusan bisnis. Salinannya ada di folder "EKSPOR KOLANG KALING".
+TODO-ISI-DATA.md
+DISKUSI-DAN-KEPUTUSAN.md

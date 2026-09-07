@@ -1,0 +1,76 @@
+# ============================================================
+#  DEPLOY KE GITHUB PAGES
+# ============================================================
+#  Berjalan setiap kali ada push ke main. Alurnya: pasang
+#  dependensi -> `next build` (yang karena `output: "export"`
+#  menulis situs statis ke out/) -> unggah out/ sebagai artefak
+#  Pages -> terbitkan.
+#
+#  Perhatikan NEXT_PUBLIC_BASE_PATH di bawah. Situs ini tinggal di
+#  sveroust.github.io/palmkaling, BUKAN di akar domain, jadi setiap
+#  alamat aset perlu awalan itu. Kalau nanti dipasang domain sendiri
+#  (palmkaling.com), kosongkan kedua variabel ini — tidak ada kode
+#  yang perlu diubah.
+# ============================================================
+name: Deploy ke GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  # Supaya bisa dijalankan manual dari tab Actions tanpa perlu push.
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Kalau ada dua push berdekatan, yang lama dibatalkan — tidak ada
+# gunanya menerbitkan versi yang sudah keduluan.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Periksa lint
+        run: npm run lint
+
+      - name: Bangun situs statis
+        run: npm run build
+        env:
+          NEXT_PUBLIC_BASE_PATH: /palmkaling
+          NEXT_PUBLIC_SITE_URL: https://sveroust.github.io/palmkaling
+
+      # Jaring pengaman: .nojekyll wajib ada, kalau tidak GitHub akan
+      # membuang folder /_next (Jekyll mengabaikan nama berawalan "_")
+      # dan seluruh CSS serta JavaScript situs hilang tanpa pesan error.
+      - name: Pastikan .nojekyll ada
+        run: test -f out/.nojekyll || (echo "out/.nojekyll HILANG" && exit 1)
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

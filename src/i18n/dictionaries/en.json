@@ -1,0 +1,313 @@
+{
+  "meta": {
+    "titleSuffix": "Sugar Palm Fruit Exporter — Indonesia",
+    "description": "Indonesian exporter of sugar palm fruit (kolang-kaling / attap chee), graded and packed to buyer specification. Minimum order 1 × 20ft FCL, FOB Tanjung Priok."
+  },
+  "nav": {
+    "home": "Home",
+    "product": "Product",
+    "supply": "Supply Network",
+    "process": "Export Process",
+    "contact": "Contact",
+    "quote": "Request Quotation",
+    "menu": "Menu",
+    "close": "Close",
+    "language": "Language"
+  },
+  "common": {
+    "requestQuote": "Request a quotation",
+    "whatsapp": "Chat on WhatsApp",
+    "viewSpecs": "View specifications",
+    "seeAll": "See full details",
+    "pending": "Being processed",
+    "required": "required",
+    "optional": "optional",
+    "notFilled": "( to be filled )",
+    "draftBanner": "Draft — details marked ( to be filled ) are still empty. Not ready to publish.",
+    "gallery": {
+      "open": "Open photo",
+      "close": "Close",
+      "prev": "Previous photo",
+      "next": "Next photo",
+      "counter": "Photo {n} of {total}"
+    },
+    "theme": {
+      "toDark": "Switch to dark mode",
+      "toLight": "Switch to light mode"
+    }
+  },
+  "home": {
+    "eyebrow": "Arenga pinnata · West Java & Banten",
+    "title": "Sugar palm fruit, graded and packed for the container.",
+    "subtitle": "We consolidate kolang-kaling from two partner harvest areas, boil and grade it under one standard, and ship it in full 20-foot loads under your packing specification.",
+    "heroNote": "Minimum order 1 × 20ft FCL · Free 1 kg sample",
+    "statsLabel": {
+      "capacity": "Monthly capacity",
+      "suppliers": "Partner harvest areas",
+      "moq": "Minimum order",
+      "leadTime": "Lead time"
+    },
+    "aboutTitle": "What we ship",
+    "aboutBody": "Kolang-kaling is the immature endosperm of the sugar palm, sold in Southeast Asia as attap chee and used in desserts, canned fruit cocktails, and beverages. It arrives boiled and held in brine or light syrup, translucent and firm, ready for your own processing line.",
+    "valueTitle": "Why buyers work with us",
+    "values": {
+      "one": {
+        "title": "One party accountable",
+        "body": "You contract with us, not with a village collector. Quality claims, replacement, and documents stay with a single counterparty from PO to bill of lading."
+      },
+      "two": {
+        "title": "Graded before it is packed",
+        "body": "Fruit is sorted by diameter and rejected for browning before boiling, so a container does not average out to your minimum grade."
+      },
+      "three": {
+        "title": "Two harvest areas, one standard",
+        "body": "Harvest seasons in Sukabumi and Lebak overlap but do not coincide, which keeps supply steadier across the year than a single-village source."
+      }
+    },
+    "productTeaserTitle": "Specification at a glance",
+    "productTeaserBody": "Two grades, three packing formats, and a spec sheet you can hand to your QC team before you commit to a sample.",
+    "ctaTitle": "Tell us your destination port and volume.",
+    "ctaBody": "Send the grade, monthly volume, and packing you need. You will get an indicative price and a packing photo set back — usually the same working day.",
+    "originTitle": "Where it comes from",
+    "originBody": "Sugar palm is not planted in blocks like oil palm. It grows scattered across smallholder land on hill slopes, which is why consolidation — not plantation size — is what determines whether an export volume can actually be filled."
+  },
+  "product": {
+    "title": "Product specification",
+    "intro": "Figures below are our standard offer. Size band, preserving medium, and packing can be adjusted to your specification on contract volumes.",
+    "gradesTitle": "Grades",
+    "grades": {
+      "gradeA": {
+        "name": "Grade A",
+        "body": "Whole, uniform, translucent white. For canning, dessert toppings, and retail packs where the fruit is visible."
+      },
+      "gradeB": {
+        "name": "Grade B",
+        "body": "Mixed size, minor cosmetic variation. For fillings, beverage bases, and further processing where appearance is not critical."
+      }
+    },
+    "specsTitle": "Technical specification",
+    "specLabels": {
+      "botanicalName": "Botanical name",
+      "grade": "Grade",
+      "length": "Length",
+      "width": "Width",
+      "thickness": "Thickness",
+      "defect": "Defect tolerance",
+      "chlorine": "Chlorine",
+      "preservative": "Preservatives",
+      "heavyMetals": "Heavy metals",
+      "medium": "Preserving medium",
+      "shelfLife": "Shelf life",
+      "storage": "Storage & transport",
+      "hsCode": "HS code"
+    },
+    "packingTitle": "Packing options",
+    "packing": {
+      "drum50": {
+        "name": "HDPE drum, 50 kg",
+        "body": "Food-grade drum with double liner. The usual choice for buyers who reprocess on arrival."
+      },
+      "drum100": {
+        "name": "HDPE drum, 100 kg",
+        "body": "Lowest cost per kilo. Suited to industrial lines that decant in bulk."
+      },
+      "vacuum": {
+        "name": "Vacuum bag, 1 / 5 / 10 kg",
+        "body": "Portioned and ready for cold storage. Chosen for retail packing and trial shipments."
+      }
+    },
+    "packingCols": {
+      "netWeight": "Net weight",
+      "perContainer": "Per 20ft container"
+    },
+    "customNote": "Need a different size band, preserving medium, or private label packing? Send the specification and we will quote against it directly.",
+    "qualities": {
+      "appearance": {
+        "name": "Appearance",
+        "body": "Whole elliptical seeds, clean and glossy, free of husk fibre."
+      },
+      "color": {
+        "name": "Colour",
+        "body": "Natural translucent white. No chlorine or synthetic bleaching agent at any stage."
+      },
+      "texture": {
+        "name": "Texture",
+        "body": "Firm and resilient bite — not soft, not slimy."
+      },
+      "odor": {
+        "name": "Odour",
+        "body": "Fresh sugar palm, neutral. No fermented sourness and no chemical smell."
+      }
+    },
+    "qualitiesTitle": "Quality profile",
+    "evidence": {
+      "title": "Measured, not claimed",
+      "intro": "Every dimension below was photographed against a millimetre rule. Buyers do not trust the words “Grade A”; they trust the ruler lying next to the seed.",
+      "length": "Length, 30–35 mm",
+      "width": "Width, 20–25 mm",
+      "thickness": "Thickness, 10–15 mm",
+      "uniformity": "Random sampling for size uniformity",
+      "weighing": "100 kg batch verified on a calibrated scale"
+    },
+    "tds": {
+      "title": "Technical data sheet",
+      "body": "The full bilingual TDS as a PDF — hand it to your QC team before you ask for a sample.",
+      "cta": "Download PDF"
+    }
+  },
+  "supply": {
+    "title": "Supply network",
+    "intro": "We buy from two partner harvest areas in West Java and Banten and process to a single standard before packing. We do not publish partner names — that is a commercial decision, and we are happy to disclose them under an NDA once a contract is in progress.",
+    "partnersTitle": "Harvest areas",
+    "regions": {
+      "sukabumi": "Sukabumi, West Java",
+      "lebak": "Lebak, Banten"
+    },
+    "partnerCols": {
+      "capacity": "Capacity",
+      "harvest": "Peak harvest",
+      "since": "Partner since"
+    },
+    "qcTitle": "Quality control",
+    "qcIntro": "Five checkpoints between the tree and the container. Each one is a point where a lot can be rejected, not merely graded down.",
+    "qc": {
+      "sorting": {
+        "name": "Incoming sorting",
+        "body": "Fruit arriving from collectors is inspected for maturity and browning. Over-ripe lots are rejected at intake, not blended in."
+      },
+      "boiling": {
+        "name": "Boiling and soaking",
+        "body": "Boiled to remove the irritant sap, then soaked and washed in changes of water until the residual astringency is gone."
+      },
+      "grading": {
+        "name": "Diameter grading",
+        "body": "Separated into Grade A and Grade B by size, so each container matches the grade on the contract."
+      },
+      "packing": {
+        "name": "Brining and packing",
+        "body": "Filled, brine or syrup added to specification, sealed, and coded with the lot number that follows it onto the packing list."
+      },
+      "inspection": {
+        "name": "Pre-shipment inspection",
+        "body": "Buyer or third-party inspection (SGS, Sucofindo) can be arranged before stuffing, at buyer's cost."
+      }
+    },
+    "traceTitle": "Traceability",
+    "traceBody": "Every pail carries a lot code that identifies the harvest area and the boiling batch. If a claim is raised, the affected lot can be isolated instead of the whole shipment.",
+    "videos": {
+      "title": "See the facility",
+      "intro": "Two short clips, unedited: the collection warehouse with its sorting tables and soaking tubs, and a macro look at the fruit itself.",
+      "warehouse": "Warehouse, sorting tables, and soaking tubs",
+      "inspection": "Close-up: clarity, colour, and texture"
+    }
+  },
+  "process": {
+    "title": "How an order runs",
+    "intro": "From first enquiry to bill of lading, this is the sequence and roughly what each step costs in time.",
+    "steps": {
+      "one": {
+        "name": "Enquiry",
+        "body": "You send grade, volume, packing, and destination port. We return an indicative price, normally within one working day.",
+        "duration": "1 day"
+      },
+      "two": {
+        "name": "Sample",
+        "body": "A 1 kg sample ships free of charge; you cover the courier. Larger evaluation samples are quoted separately.",
+        "duration": "5–10 days"
+      },
+      "three": {
+        "name": "Contract and PI",
+        "body": "We issue a proforma invoice with the agreed specification, Incoterm, and payment terms. Advance payment starts production.",
+        "duration": "2–3 days"
+      },
+      "four": {
+        "name": "Production",
+        "body": "Fruit is collected, boiled, graded, and packed against your lot. This is the step that sets the lead time.",
+        "duration": "14–20 days"
+      },
+      "five": {
+        "name": "Inspection and stuffing",
+        "body": "Optional third-party inspection, then the container is stuffed and sealed at the processing site.",
+        "duration": "1–2 days"
+      },
+      "six": {
+        "name": "Documents",
+        "body": "Invoice, packing list, certificate of origin, phytosanitary and health certificates are issued and sent by courier and email.",
+        "duration": "3–5 days"
+      },
+      "seven": {
+        "name": "Shipment",
+        "body": "Loaded at Tanjung Priok. Transit time depends on your port and carrier.",
+        "duration": "varies"
+      }
+    },
+    "termsTitle": "Trade terms",
+    "termLabels": {
+      "moq": "Minimum order",
+      "capacity": "Monthly capacity",
+      "incoterms": "Incoterms",
+      "payment": "Payment terms",
+      "leadTime": "Lead time",
+      "sample": "Sample policy",
+      "container": "Container"
+    },
+    "docsTitle": "Documents we issue",
+    "docs": [
+      "Commercial invoice",
+      "Packing list",
+      "Bill of lading",
+      "Certificate of origin",
+      "Phytosanitary certificate",
+      "Health / free-sale certificate",
+      "Fumigation certificate (on request)"
+    ],
+    "docsNote": "Certificates required by your country's import authority differ. Tell us the destination and we will confirm what can be issued before you place the order.",
+    "portLabel": "Port of loading"
+  },
+  "contact": {
+    "title": "Request a quotation",
+    "intro": "Fill in what you know. Fields you leave blank are fine — we will ask. The form opens WhatsApp with your details already written out, so nothing is retyped.",
+    "form": {
+      "name": "Your name",
+      "companyName": "Company",
+      "country": "Country",
+      "email": "Email",
+      "whatsapp": "WhatsApp or phone",
+      "grade": "Grade",
+      "gradeAny": "Not sure yet",
+      "quantity": "Quantity (MT or containers)",
+      "packing": "Packing",
+      "packingAny": "Advise me",
+      "port": "Destination port",
+      "incoterm": "Incoterm",
+      "message": "Anything else we should know",
+      "submit": "Send via WhatsApp",
+      "submitEmail": "Or send by email instead",
+      "sending": "Opening WhatsApp…",
+      "errorRequired": "Please fill in at least your name and either an email or a phone number."
+    },
+    "directTitle": "Direct contact",
+    "labels": {
+      "whatsapp": "WhatsApp",
+      "email": "Email",
+      "address": "Office",
+      "legal": "Legal entity",
+      "nib": "Business ID (NIB)",
+      "hs": "HS code",
+      "port": "Port of loading",
+      "hours": "Hours",
+      "website": "Website"
+    },
+    "hours": "Mon–Sat, 08:00–17:00 (GMT+7)",
+    "responseNote": "Enquiries received before 15:00 Jakarta time are usually answered the same day.",
+    "companyTitle": "Company"
+  },
+  "footer": {
+    "tagline": "Sugar palm fruit from West Java and Banten, consolidated and shipped by the container.",
+    "navTitle": "Pages",
+    "contactTitle": "Contact",
+    "legalTitle": "Company",
+    "rights": "All rights reserved.",
+    "disclaimer": "Specifications are indicative and confirmed per contract."
+  }
+}

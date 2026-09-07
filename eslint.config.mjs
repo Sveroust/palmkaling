@@ -12,6 +12,11 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Sumber pihak ketiga dari ThreeUI. Sengaja TIDAK di-lint: berkasnya
+    // harus tetap byte-exact dengan bundle resmi (SHA-256 tercatat di
+    // DISKUSI-DAN-KEPUTUSAN.md), jadi tidak boleh diedit untuk menyenangkan
+    // aturan lint kita sendiri.
+    "src/shaders/**",
   ]),
 ]);
 

@@ -1,0 +1,313 @@
+{
+  "meta": {
+    "titleSuffix": "Eksportir Kolang-Kaling — Indonesia",
+    "description": "Eksportir kolang-kaling (sugar palm fruit / attap chee) asal Indonesia. Disortir per grade dan dikemas sesuai spesifikasi pembeli. Minimum 1 × 20ft FCL, FOB Tanjung Priok."
+  },
+  "nav": {
+    "home": "Beranda",
+    "product": "Produk",
+    "supply": "Jaringan Pasokan",
+    "process": "Alur Ekspor",
+    "contact": "Kontak",
+    "quote": "Minta Penawaran",
+    "menu": "Menu",
+    "close": "Tutup",
+    "language": "Bahasa"
+  },
+  "common": {
+    "requestQuote": "Minta penawaran",
+    "whatsapp": "Chat WhatsApp",
+    "viewSpecs": "Lihat spesifikasi",
+    "seeAll": "Lihat selengkapnya",
+    "pending": "Sedang diurus",
+    "required": "wajib",
+    "optional": "opsional",
+    "notFilled": "( belum diisi )",
+    "draftBanner": "Draf — data bertanda ( belum diisi ) masih kosong. Jangan dipublikasikan dulu.",
+    "gallery": {
+      "open": "Buka foto",
+      "close": "Tutup",
+      "prev": "Foto sebelumnya",
+      "next": "Foto berikutnya",
+      "counter": "Foto {n} dari {total}"
+    },
+    "theme": {
+      "toDark": "Ganti ke mode gelap",
+      "toLight": "Ganti ke mode terang"
+    }
+  },
+  "home": {
+    "eyebrow": "Arenga pinnata · Jawa Barat & Banten",
+    "title": "Kolang-kaling, disortir dan dikemas untuk kontainer.",
+    "subtitle": "Kami mengumpulkan kolang-kaling dari dua wilayah panen mitra, merebus dan menyortirnya dengan satu standar, lalu mengirimkannya dalam muatan penuh 20 kaki sesuai spesifikasi kemasan pembeli.",
+    "heroNote": "Minimum 1 × 20ft FCL · Sampel 1 kg gratis",
+    "statsLabel": {
+      "capacity": "Kapasitas bulanan",
+      "suppliers": "Wilayah panen mitra",
+      "moq": "Minimum order",
+      "leadTime": "Waktu produksi"
+    },
+    "aboutTitle": "Yang kami kirim",
+    "aboutBody": "Kolang-kaling adalah endosperma buah aren muda, dikenal di Asia Tenggara sebagai attap chee, dipakai untuk hidangan penutup, buah kaleng, dan minuman. Barang dikirim dalam kondisi sudah direbus dan direndam air garam atau sirup ringan — bening, kenyal, siap masuk lini pengolahan pembeli.",
+    "valueTitle": "Kenapa pembeli bekerja dengan kami",
+    "values": {
+      "one": {
+        "title": "Satu pihak yang bertanggung jawab",
+        "body": "Kontrak dengan kami, bukan dengan pengepul desa. Klaim mutu, penggantian, dan dokumen tetap di satu pihak dari PO sampai bill of lading."
+      },
+      "two": {
+        "title": "Disortir sebelum dikemas",
+        "body": "Buah dipisah berdasarkan diameter dan ditolak kalau menguning sebelum perebusan, jadi isi kontainer tidak berakhir rata-rata di bawah grade yang dipesan."
+      },
+      "three": {
+        "title": "Dua wilayah panen, satu standar",
+        "body": "Musim panen Sukabumi dan Lebak beririsan tapi tidak bersamaan. Itu membuat pasokan lebih stabil sepanjang tahun dibanding mengandalkan satu desa."
+      }
+    },
+    "productTeaserTitle": "Spesifikasi ringkas",
+    "productTeaserBody": "Dua grade, tiga format kemasan, dan lembar spesifikasi yang bisa langsung diserahkan ke tim QC pembeli sebelum memutuskan minta sampel.",
+    "ctaTitle": "Sebutkan pelabuhan tujuan dan volumenya.",
+    "ctaBody": "Kirim grade, volume per bulan, dan kemasan yang dibutuhkan. Kami balas dengan harga indikatif dan foto kemasan — umumnya di hari kerja yang sama.",
+    "originTitle": "Asal barangnya",
+    "originBody": "Pohon aren tidak ditanam berblok seperti sawit. Tumbuhnya menyebar di lahan rakyat di lereng bukit. Karena itu yang menentukan sanggup atau tidaknya memenuhi volume ekspor adalah kemampuan mengumpulkan, bukan luas kebun."
+  },
+  "product": {
+    "title": "Spesifikasi produk",
+    "intro": "Angka di bawah adalah penawaran standar kami. Rentang ukuran, media perendam, dan kemasan bisa disesuaikan dengan spesifikasi pembeli untuk volume kontrak.",
+    "gradesTitle": "Grade",
+    "grades": {
+      "gradeA": {
+        "name": "Grade A",
+        "body": "Utuh, ukuran seragam, putih bening. Untuk pengalengan, topping dessert, dan kemasan ritel yang buahnya terlihat."
+      },
+      "gradeB": {
+        "name": "Grade B",
+        "body": "Ukuran campur, ada variasi tampilan ringan. Untuk isian, bahan dasar minuman, dan pengolahan lanjutan yang tidak menuntut tampilan sempurna."
+      }
+    },
+    "specsTitle": "Spesifikasi teknis",
+    "specLabels": {
+      "botanicalName": "Nama botani",
+      "grade": "Grade",
+      "length": "Panjang",
+      "width": "Lebar",
+      "thickness": "Tebal",
+      "defect": "Toleransi cacat",
+      "chlorine": "Klorin",
+      "preservative": "Bahan pengawet",
+      "heavyMetals": "Logam berat",
+      "medium": "Media perendam",
+      "shelfLife": "Masa simpan",
+      "storage": "Penyimpanan & pengangkutan",
+      "hsCode": "Kode HS"
+    },
+    "packingTitle": "Pilihan kemasan",
+    "packing": {
+      "drum50": {
+        "name": "Drum HDPE, 50 kg",
+        "body": "Drum food grade dengan double liner. Pilihan umum untuk pembeli yang mengolah ulang setibanya barang."
+      },
+      "drum100": {
+        "name": "Drum HDPE, 100 kg",
+        "body": "Biaya per kilo paling murah. Cocok untuk lini industri yang menuang dalam jumlah besar."
+      },
+      "vacuum": {
+        "name": "Vacuum bag, 1 / 5 / 10 kg",
+        "body": "Sudah terporsi dan siap masuk cold storage. Dipilih untuk kemasan ritel dan pengiriman percobaan."
+      }
+    },
+    "packingCols": {
+      "netWeight": "Berat bersih",
+      "perContainer": "Per kontainer 20ft"
+    },
+    "customNote": "Butuh rentang ukuran, media perendam, atau kemasan private label yang berbeda? Kirim spesifikasinya, kami hitungkan penawarannya langsung.",
+    "qualities": {
+      "appearance": {
+        "name": "Kenampakan",
+        "body": "Biji utuh lonjong, bersih mengkilap, bebas kotoran sabut."
+      },
+      "color": {
+        "name": "Warna",
+        "body": "Putih bening alami. Tanpa klorin atau pemutih sintetis di tahap mana pun."
+      },
+      "texture": {
+        "name": "Tekstur",
+        "body": "Kenyal dan padat elastis — tidak lembek, tidak berlendir."
+      },
+      "odor": {
+        "name": "Aroma",
+        "body": "Khas buah aren segar, netral. Tanpa aroma asam fermentasi maupun bau kimiawi."
+      }
+    },
+    "qualitiesTitle": "Profil mutu",
+    "evidence": {
+      "title": "Diukur, bukan diklaim",
+      "intro": "Setiap dimensi di bawah difoto bersama mistar milimeter. Importir tidak percaya kata “Grade A”; mereka percaya penggaris di sebelah bijinya.",
+      "length": "Panjang, 30–35 mm",
+      "width": "Lebar, 20–25 mm",
+      "thickness": "Tebal, 10–15 mm",
+      "uniformity": "Sampling acak untuk keseragaman ukuran",
+      "weighing": "Batch 100 kg diverifikasi dengan timbangan terkalibrasi"
+    },
+    "tds": {
+      "title": "Lembar spesifikasi teknis",
+      "body": "TDS dwibahasa lengkap dalam PDF — serahkan ke tim QC sebelum meminta sampel.",
+      "cta": "Unduh PDF"
+    }
+  },
+  "supply": {
+    "title": "Jaringan pasokan",
+    "intro": "Kami membeli dari dua wilayah panen mitra di Jawa Barat dan Banten, lalu memprosesnya dengan satu standar sebelum dikemas. Nama mitra tidak kami publikasikan — itu keputusan dagang, dan kami bersedia membukanya di bawah NDA saat kontrak sudah berjalan.",
+    "partnersTitle": "Wilayah panen",
+    "regions": {
+      "sukabumi": "Sukabumi, Jawa Barat",
+      "lebak": "Lebak, Banten"
+    },
+    "partnerCols": {
+      "capacity": "Kapasitas",
+      "harvest": "Puncak panen",
+      "since": "Mitra sejak"
+    },
+    "qcTitle": "Kontrol mutu",
+    "qcIntro": "Lima titik pemeriksaan antara pohon dan kontainer. Di tiap titik, satu lot bisa ditolak — bukan sekadar diturunkan gradenya.",
+    "qc": {
+      "sorting": {
+        "name": "Sortir masuk",
+        "body": "Buah dari pengepul diperiksa tingkat kematangan dan warnanya. Lot yang terlalu tua ditolak di gerbang, tidak dicampur."
+      },
+      "boiling": {
+        "name": "Perebusan dan perendaman",
+        "body": "Direbus untuk menghilangkan getah yang gatal, lalu direndam dan dicuci dengan penggantian air sampai rasa sepatnya hilang."
+      },
+      "grading": {
+        "name": "Sortir diameter",
+        "body": "Dipisah menjadi Grade A dan Grade B berdasarkan ukuran, supaya isi tiap kontainer sesuai grade di kontrak."
+      },
+      "packing": {
+        "name": "Perendaman garam dan pengemasan",
+        "body": "Diisi, ditambah air garam atau sirup sesuai spesifikasi, disegel, dan diberi kode lot yang terbawa sampai ke packing list."
+      },
+      "inspection": {
+        "name": "Inspeksi pra-pengapalan",
+        "body": "Inspeksi oleh pembeli atau pihak ketiga (SGS, Sucofindo) bisa diatur sebelum stuffing, atas biaya pembeli."
+      }
+    },
+    "traceTitle": "Ketertelusuran",
+    "traceBody": "Setiap ember membawa kode lot yang menunjukkan wilayah panen dan batch perebusannya. Kalau ada klaim, lot yang bermasalah bisa diisolasi tanpa menyentuh seluruh pengiriman.",
+    "videos": {
+      "title": "Lihat fasilitasnya",
+      "intro": "Dua klip pendek tanpa polesan: gudang penampungan dengan meja sortasi dan wadah perendaman, serta tampilan makro buahnya sendiri.",
+      "warehouse": "Gudang, meja sortasi, dan wadah perendaman",
+      "inspection": "Close-up: kejernihan, warna, dan tekstur"
+    }
+  },
+  "process": {
+    "title": "Alur satu order",
+    "intro": "Dari permintaan pertama sampai bill of lading, inilah urutannya dan kira-kira berapa lama tiap langkah.",
+    "steps": {
+      "one": {
+        "name": "Permintaan",
+        "body": "Pembeli mengirim grade, volume, kemasan, dan pelabuhan tujuan. Kami balas dengan harga indikatif, umumnya dalam satu hari kerja.",
+        "duration": "1 hari"
+      },
+      "two": {
+        "name": "Sampel",
+        "body": "Sampel 1 kg dikirim gratis; ongkos kurir ditanggung pembeli. Sampel evaluasi yang lebih besar dihitung terpisah.",
+        "duration": "5–10 hari"
+      },
+      "three": {
+        "name": "Kontrak dan PI",
+        "body": "Kami terbitkan proforma invoice berisi spesifikasi, Incoterm, dan syarat pembayaran yang disepakati. Pembayaran muka memulai produksi.",
+        "duration": "2–3 hari"
+      },
+      "four": {
+        "name": "Produksi",
+        "body": "Buah dikumpulkan, direbus, disortir, dan dikemas untuk lot pembeli. Langkah inilah yang menentukan lead time.",
+        "duration": "14–20 hari"
+      },
+      "five": {
+        "name": "Inspeksi dan stuffing",
+        "body": "Inspeksi pihak ketiga bila diminta, lalu kontainer diisi dan disegel di lokasi pengolahan.",
+        "duration": "1–2 hari"
+      },
+      "six": {
+        "name": "Dokumen",
+        "body": "Invoice, packing list, certificate of origin, phytosanitary, dan health certificate diterbitkan lalu dikirim via kurir dan email.",
+        "duration": "3–5 hari"
+      },
+      "seven": {
+        "name": "Pengapalan",
+        "body": "Dimuat di Tanjung Priok. Waktu transit tergantung pelabuhan tujuan dan pelayaran.",
+        "duration": "bervariasi"
+      }
+    },
+    "termsTitle": "Syarat dagang",
+    "termLabels": {
+      "moq": "Minimum order",
+      "capacity": "Kapasitas bulanan",
+      "incoterms": "Incoterms",
+      "payment": "Syarat pembayaran",
+      "leadTime": "Waktu produksi",
+      "sample": "Kebijakan sampel",
+      "container": "Kontainer"
+    },
+    "docsTitle": "Dokumen yang kami terbitkan",
+    "docs": [
+      "Commercial invoice",
+      "Packing list",
+      "Bill of lading",
+      "Certificate of origin",
+      "Sertifikat phytosanitary",
+      "Health / free-sale certificate",
+      "Sertifikat fumigasi (bila diminta)"
+    ],
+    "docsNote": "Sertifikat yang diminta otoritas impor tiap negara berbeda. Sebutkan negara tujuan, kami pastikan dulu mana yang bisa diterbitkan sebelum order dibuat.",
+    "portLabel": "Pelabuhan muat"
+  },
+  "contact": {
+    "title": "Minta penawaran",
+    "intro": "Isi sebisanya. Kolom yang dikosongkan tidak masalah — nanti kami tanyakan. Tombolnya membuka WhatsApp dengan isian yang sudah tertulis rapi, jadi tidak perlu mengetik ulang.",
+    "form": {
+      "name": "Nama",
+      "companyName": "Perusahaan",
+      "country": "Negara",
+      "email": "Email",
+      "whatsapp": "WhatsApp atau telepon",
+      "grade": "Grade",
+      "gradeAny": "Belum tahu",
+      "quantity": "Jumlah (MT atau kontainer)",
+      "packing": "Kemasan",
+      "packingAny": "Minta saran",
+      "port": "Pelabuhan tujuan",
+      "incoterm": "Incoterm",
+      "message": "Hal lain yang perlu kami tahu",
+      "submit": "Kirim lewat WhatsApp",
+      "submitEmail": "Atau kirim lewat email",
+      "sending": "Membuka WhatsApp…",
+      "errorRequired": "Mohon isi minimal nama dan salah satu dari email atau nomor telepon."
+    },
+    "directTitle": "Kontak langsung",
+    "labels": {
+      "whatsapp": "WhatsApp",
+      "email": "Email",
+      "address": "Kantor",
+      "legal": "Badan hukum",
+      "nib": "NIB",
+      "hs": "Kode HS",
+      "port": "Pelabuhan muat",
+      "hours": "Jam kerja",
+      "website": "Website"
+    },
+    "hours": "Senin–Sabtu, 08.00–17.00 WIB",
+    "responseNote": "Permintaan yang masuk sebelum pukul 15.00 WIB umumnya dijawab di hari yang sama.",
+    "companyTitle": "Perusahaan"
+  },
+  "footer": {
+    "tagline": "Kolang-kaling dari Jawa Barat dan Banten, dikumpulkan dan dikirim per kontainer.",
+    "navTitle": "Halaman",
+    "contactTitle": "Kontak",
+    "legalTitle": "Perusahaan",
+    "rights": "Seluruh hak dilindungi.",
+    "disclaimer": "Spesifikasi bersifat indikatif dan dikonfirmasi per kontrak."
+  }
+}

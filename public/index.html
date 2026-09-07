@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PALMKALING — Premium Sugar Palm Fruit Export</title>
+    <meta name="description" content="Indonesian exporter of kolang-kaling (sugar palm fruit / attap chee). Graded, packed to buyer specification. Minimum 1 x 20ft FCL." />
+    <link rel="canonical" href="https://sveroust.github.io/palmkaling/en/" />
+    <!--
+      PENGGANTI src/proxy.ts.
+
+      Di server sungguhan, header Accept-Language dibaca lebih dulu
+      sehingga pembeli Korea mendarat di /ko tanpa pernah melihat
+      halaman perantara. GitHub Pages tidak menjalankan kode server,
+      jadi deteksinya terpaksa pindah ke browser.
+
+      Yang hilang dibanding proxy.ts, dan jangan dianggap sepele:
+      ada satu langkah pengalihan yang terlihat, dan mesin pencari
+      membaca halaman ini sebagai halaman tersendiri — karena itu
+      ada canonical ke versi Inggris dan tautan noscript ke ketiga
+      bahasa, supaya perayap tetap menemukan semuanya.
+
+      Alamat tujuan sengaja RELATIF ("./id/"), bukan absolut. Dengan
+      begitu berkas ini bekerja sama benar di localhost, di
+      sveroust.github.io/palmkaling/, maupun nanti di palmkaling.com
+      tanpa diubah sedikit pun.
+    -->
+    <script>
+      (function () {
+        var ada = ["id", "en", "ko"];
+        var pilih = "en";
+        var minta = navigator.languages || [navigator.language || "en"];
+        for (var i = 0; i < minta.length; i++) {
+          var dasar = String(minta[i]).toLowerCase().split("-")[0];
+          if (ada.indexOf(dasar) !== -1) { pilih = dasar; break; }
+        }
+        location.replace("./" + pilih + "/");
+      })();
+    </script>
+  </head>
+  <body>
+    <noscript>
+      <h1>PALMKALING</h1>
+      <p>Premium Sugar Palm Fruit Export</p>
+      <ul>
+        <li><a href="./id/">Bahasa Indonesia</a></li>
+        <li><a href="./en/">English</a></li>
+        <li><a href="./ko/">한국어</a></li>
+      </ul>
+    </noscript>
+  </body>
+</html>

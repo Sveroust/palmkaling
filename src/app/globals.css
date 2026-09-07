@@ -1,26 +1,340 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ============================================================
+   DESIGN SYSTEM — WARNA, FONT, SPASI
+   ============================================================
+   Semua warna situs berasal dari variabel di bawah. Mau ganti
+   nuansa situs? Ubah nilai --c-* (mode terang) atau --d-* (mode
+   malam) di sini, bukan di komponen.
+   Palet diambil dari bahannya sendiri: hijau daun aren, gula aren,
+   dan putih bening kolang-kaling.
 
+   Bobot huruf per elemen tidak ditulis ulang di tiap komponen —
+   lihat utilitas `type-*` di bawah. Mau CTA lebih tebal? Ubah
+   sekali di `@utility type-cta`, seluruh situs ikut.
+   ============================================================ */
+
+/* ============================================================
+   TOKEN WARNA — DUA MODE
+   ============================================================
+   Warna TIDAK ditulis langsung di sini. Blok ini hanya memetakan
+   nama token Tailwind ke variabel `--c-*` yang nilainya ditukar
+   per mode di bawah. Efeknya: `bg-paper`, `text-ink`, `tone="palm"`
+   dan semua kelas lain tetap berlaku apa adanya — TIDAK ADA satu
+   pun komponen yang perlu ditambahi varian `dark:`.
+
+   `@theme inline` dipakai supaya utilitas mencetak `var(--c-paper)`
+   langsung. Tanpa `inline`, Tailwind mencetak `var(--color-paper)`
+   yang isinya `var(--c-paper)` — masih jalan, tapi satu lompatan
+   var lebih panjang tanpa manfaat.
+   ============================================================ */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-paper: var(--c-paper);
+  --color-paper-deep: var(--c-paper-deep);
+  --color-ink: var(--c-ink);
+  --color-ink-soft: var(--c-ink-soft);
+  --color-ink-faint: var(--c-ink-faint);
+
+  --color-palm: var(--c-palm);
+  --color-palm-deep: var(--c-palm-deep);
+  --color-palm-light: var(--c-palm-light);
+  --color-palm-text: var(--c-palm-text);
+
+  --color-sap: var(--c-sap);
+  --color-sap-light: var(--c-sap-light);
+  --color-sap-text: var(--c-sap-text);
+
+  --color-line: var(--c-line);
+  --color-line-strong: var(--c-line-strong);
+
+  /* ---------- PERMUKAAN YANG TIDAK IKUT BERGANTI MODE ----------
+     Dua tempat di situs ini selalu gelap, di mode apa pun: pita
+     hijau (`palm`, warna merek yang memang tidak diubah) dan
+     lightbox galeri. Keduanya TIDAK BOLEH memakai `paper`/`ink`
+     untuk teksnya — kedua token itu berbalik di mode malam,
+     sehingga teks terang di atas hijau berubah jadi teks GELAP di
+     atas hijau dan judul hero praktis hilang.
+
+     `on-dark` sengaja bernilai sama dengan `paper` mode terang,
+     supaya pita hijau tampak persis sama di kedua mode. */
+  --color-overlay: #14120f;
+  --color-on-dark: #f7f4ec;
 }
 
+/* Font tetap di blok @theme BIASA (tanpa `inline`) — disengaja.
+   Kalau font ikut di-inline, nilainya dibekukan ke dalam utilitas
+   dan override bahasa Korea di `html[lang^="ko"]` berhenti bekerja. */
+@theme {
+  /* font-display = Plus Jakarta Sans (judul, tombol, angka).
+     font-sans    = Inter (paragraf, label, keterangan). */
+  --font-display: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-card: 2px;
+}
+
+/* ============================================================
+   VARIAN `dark:`
+   ============================================================
+   Tailwind v4 sudah punya `dark:` bawaan, tapi ia hanya membaca
+   setelan perangkat — tidak tahu soal tombol dan pilihan yang
+   diingat. Jadi variannya ditulis ulang di sini supaya keduanya
+   dipatuhi, memakai syarat yang PERSIS SAMA dengan palet di atas.
+
+   Sebagian besar komponen tidak perlu ini: token warna sudah
+   berganti sendiri. `dark:` hanya untuk hal yang butuh dua ASET
+   berbeda — logo hijau vs logo putih, ikon matahari vs bulan.
+   ============================================================ */
+@custom-variant dark {
+  &:where(:root[data-theme="dark"], :root[data-theme="dark"] *) {
+    @slot;
+  }
+  @media (prefers-color-scheme: dark) {
+    &:where(:root:not([data-theme="light"]), :root:not([data-theme="light"]) *) {
+      @slot;
+    }
+  }
+}
+
+/* ============================================================
+   NILAI PALET
+   ============================================================
+   Palet malam ditulis SEKALI di `--d-*`, lalu dipetakan dua kali
+   di bawahnya: sekali untuk pilihan manual (`data-theme="dark"`),
+   sekali untuk pengunjung yang setelan perangkatnya gelap tapi
+   JavaScript-nya mati. Yang terduplikasi cuma pemetaannya; nilai
+   yang perlu kamu sunting tetap satu tempat.
+
+   Angka kontras di bawah bukan kira-kira — semuanya diukur (WCAG
+   AA butuh 4.5 untuk teks kecil).
+   ============================================================ */
+:root {
+  /* ---------- MODE TERANG ---------- */
+  --c-paper: #f7f4ec;
+  --c-paper-deep: #efe9dc;
+  --c-ink: #16211a; /* 15.1 di kertas */
+  --c-ink-soft: #4a5750; /* 6.9 */
+  --c-ink-faint: #606a64; /* 5.1 — dulu #7d8a83 yang cuma 3.3 (gagal) */
+
+  --c-palm: #1e4030;
+  --c-palm-deep: #142a20;
+  --c-palm-light: #2f5c45;
+  /* `palm-text` = hijau untuk TEKS dan garis, bukan untuk latar.
+     Di mode terang ia sama dengan hijau merek (10.4 di kertas).
+     Di mode malam hijau merek hanya mencapai 1.6 di latar gelap —
+     praktis tak terbaca — jadi di sana ia dicerahkan. */
+  --c-palm-text: #1e4030;
+
+  /* `sap` = emas merek untuk ISIAN, border, dan tombol. Jangan
+     dipakai untuk teks kecil: di atas kertas nilainya cuma 3.06. */
+  --c-sap: #b8813a;
+  --c-sap-light: #d9ab6b;
+  /* `sap-text` = emas yang sama, digelapkan sampai lulus. Hue 34°
+     dan saturasinya dijaga, jadi masih terbaca emas aren. 5.1 di
+     kertas, 4.6 di kertas tua. */
+  --c-sap-text: #89602b;
+
+  --c-line: #ddd5c4;
+  --c-line-strong: #c6bca6;
+
+  /* ---------- NILAI MODE MALAM ---------- */
+  /* Netral hangat, bukan hijau pekat: pita hijau harus tetap
+     terbaca sebagai pita tersendiri (ΔL* 15.8 dari permukaan).
+     Emasnya diambil persis dari logo varian gelap. */
+  --d-paper: #1a1814; /* permukaan TERANGKAT, sama peran seperti mode terang */
+  --d-paper-deep: #14120f; /* pita TENGGELAM — lebih gelap dari paper */
+  --d-ink: #f2efe6; /* 15.4 */
+  --d-ink-soft: #a8a49a; /* 7.1 */
+  --d-ink-faint: #878278; /* 4.6 */
+
+  --d-palm: #1e4030; /* tidak diubah — warna merek, dipakai sebagai LATAR */
+  --d-palm-deep: #142a20;
+  --d-palm-light: #2f5c45;
+  /* Hue 152° sama persis dengan hijau merek, hanya dicerahkan
+     sampai lulus: 5.6 di paper, 5.9 di paper-deep. */
+  --d-palm-text: #4ba179;
+
+  --d-sap: #e0b050; /* 8.9 — emas logo gelap */
+  --d-sap-light: #eec98a;
+  --d-sap-text: #e0b050; /* di latar gelap, emas terang sudah lulus */
+
+  --d-line: #302c26;
+  --d-line-strong: #443f37;
+}
+
+/* Urutan paper vs paper-deep TIDAK dibalik di mode malam.
+   `paper` selalu permukaan terangkat, `paper-deep` selalu pita
+   tenggelam. Kalau dibalik, kartu ber-`bg-paper` yang duduk di
+   dalam pita `tone="deep"` berubah dari terlihat terangkat jadi
+   terlihat cekung — elevasinya jungkir balik. */
+:root[data-theme="dark"] {
+  --c-paper: var(--d-paper);
+  --c-paper-deep: var(--d-paper-deep);
+  --c-ink: var(--d-ink);
+  --c-ink-soft: var(--d-ink-soft);
+  --c-ink-faint: var(--d-ink-faint);
+  --c-palm: var(--d-palm);
+  --c-palm-deep: var(--d-palm-deep);
+  --c-palm-light: var(--d-palm-light);
+  --c-palm-text: var(--d-palm-text);
+  --c-sap: var(--d-sap);
+  --c-sap-light: var(--d-sap-light);
+  --c-sap-text: var(--d-sap-text);
+  --c-line: var(--d-line);
+  --c-line-strong: var(--d-line-strong);
+}
+
+/* Jaring pengaman untuk pengunjung tanpa JavaScript: skrip anti-kedip
+   tidak jalan, jadi `data-theme` tidak pernah tertempel. Tanpa blok
+   ini mereka selalu dapat mode terang meski perangkatnya gelap.
+   `:not([data-theme="light"])` menjaga pilihan manual tetap menang. */
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  :root:not([data-theme="light"]) {
+    --c-paper: var(--d-paper);
+    --c-paper-deep: var(--d-paper-deep);
+    --c-ink: var(--d-ink);
+    --c-ink-soft: var(--d-ink-soft);
+    --c-ink-faint: var(--d-ink-faint);
+    --c-palm: var(--d-palm);
+    --c-palm-deep: var(--d-palm-deep);
+    --c-palm-light: var(--d-palm-light);
+    --c-palm-text: var(--d-palm-text);
+    --c-sap: var(--d-sap);
+    --c-sap-light: var(--d-sap-light);
+    --c-sap-text: var(--d-sap-text);
+    --c-line: var(--d-line);
+    --c-line-strong: var(--d-line-strong);
+  }
+}
+
+/* Hangul: font Latin tidak punya glif Korea, jadi kita sandarkan ke
+   font sistem Korea supaya teks /ko tidak jatuh ke font default jelek.
+   Daftar ini sudah diakhiri sans-serif, jadi yang memakainya tidak
+   perlu menambahkannya lagi. */
+:root {
+  --font-korean: "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+}
+
+/* Override untuk versi Korea. Ditaruh di <html> (bukan body) karena di
+   situlah variabel font hidup — lihat catatan di [locale]/layout.tsx. */
+html[lang^="ko"] {
+  /* Jakarta dan Inter tetap di depan supaya angka dan kata Latin di
+     halaman Korea ("30–35 mm", "FCL") memakai font yang sama seperti
+     halaman lain; font Korea hanya menambal glif Hangul-nya. */
+  --font-display: var(--font-jakarta), var(--font-korean);
+  --font-sans: var(--font-inter), var(--font-korean);
+}
+
+html[lang^="ko"] body {
+  word-break: keep-all; /* mencegah kata Korea terpotong di tengah baris */
+}
+
+/* Memberitahu browser mode apa yang berlaku, supaya bilah gulir,
+   kotak centang, dan pemilih tanggal bawaan ikut gelap. */
+:root {
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ============================================================
+   PENEKANAN DALAM PARAGRAF
+   ============================================================
+   Racikan ini tidak memuat berkas miring sama sekali. Kalau <em>
+   dibiarkan apa adanya, browser akan MEMIRINGKAN PAKSA huruf tegak
+   (faux italic) — hasilnya huruf yang terlihat rusak. Jadi kata
+   yang ingin ditonjolkan ditebalkan, bukan dimiringkan: Inter
+   Semibold 600, sesuai racikan.
+   ============================================================ */
+@layer base {
+  /* Ditaruh di layer `base`, bukan di luar layer, dan itu penting.
+     Aturan tanpa layer mengalahkan SEMUA utilitas Tailwind — artinya
+     <strong className="font-bold"> pun akan tetap 600, dan kelas itu
+     jadi tidak berfungsi tanpa sebab yang terlihat. Di dalam `base`,
+     aturan ini menang atas preflight Tailwind (yang memberi `bolder`)
+     tapi masih bisa ditimpa per tempat lewat kelas utilitas. */
+  strong,
+  b {
+    font-weight: 600;
+  }
+
+  em,
+  i {
+    font-style: normal;
+    font-weight: 600;
+  }
+}
+
+/* ============================================================
+   UTILITAS TIPOGRAFI
+   ============================================================
+   Tiga peran yang bobotnya harus persis sama di seluruh situs.
+   Ditulis sebagai utilitas Tailwind supaya tetap bisa ditimpa
+   per tempat (mis. `type-label text-sm`) dan urutan layer-nya
+   benar terhadap utilitas lain.
+   ============================================================ */
+
+/* Tombol/CTA — Plus Jakarta Sans Semibold 600. */
+@utility type-cta {
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+/* Label/badge kecil — Inter Medium 500, huruf besar, jarak +0.05em.
+   Jarak huruf memang perlu ditambah: huruf kapital berdiri lebih
+   rapat daripada huruf kecil, jadi tanpa spasi ekstra label pendek
+   terbaca seperti satu blok. */
+@utility type-label {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Angka/statistik besar — Jakarta Bold 700, jarak dirapatkan.
+   Di ukuran besar, celah antar-angka terlihat melebar; -0.03em
+   mengembalikannya jadi satu kesatuan yang padat. */
+@utility type-stat {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Fokus keyboard yang terlihat jelas — syarat aksesibilitas. */
+:where(a, button, input, select, textarea):focus-visible {
+  /* palm-text, bukan palm: cincin fokus hijau tua tidak terlihat
+     di atas latar gelap. */
+  outline: 2px solid var(--color-palm-text);
+  outline-offset: 2px;
+}
+
+/* Hormati pengguna yang mematikan animasi di setelan sistemnya. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Garis tipis dekoratif yang dipakai berulang di pemisah bagian. */
+.rule-dotted {
+  background-image: radial-gradient(var(--color-line-strong) 1px, transparent 1px);
+  background-size: 6px 6px;
+  height: 1px;
 }
