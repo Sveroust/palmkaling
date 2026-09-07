@@ -21,7 +21,8 @@ REPO="https://github.com/Sveroust/palmkaling.git"
 BASE="/palmkaling"
 SITE="https://sveroust.github.io/palmkaling"
 
-cd "$(dirname "$0")"
+# Skrip ini tinggal di scripts/, jadi naik satu tingkat ke akar proyek.
+cd "$(dirname "$0")/.."
 
 echo "==> Membangun (basePath ${BASE})"
 NEXT_PUBLIC_BASE_PATH="$BASE" NEXT_PUBLIC_SITE_URL="$SITE" npx next build
