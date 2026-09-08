@@ -153,8 +153,31 @@ Kalau daftarnya kosong, pita "Draf" ikut hilang dan situs siap terbit.
 
 ## Catatan ukuran
 
-`public/media/` berisi sekitar 9,7 MB, sebagian besar dua video
-(8,6 MB). Masih jauh di bawah batas 1 GB milik GitHub Pages, tapi karena
+`public/media/` berisi sekitar 6,5 MB, sebagian besar dua video
+(5,5 MB). Masih jauh di bawah batas 1 GB milik GitHub Pages, tapi karena
 optimasi gambar mati, seluruh berkas foto terkirim dalam ukuran aslinya.
 Kalau videonya bertambah, pindahkan ke YouTube atau Cloudflare Stream
 supaya repo tetap ringan dan halaman tetap cepat.
+
+Videonya dikompres H.264 profil Main, CRF 28, audio AAC 64 kbps mono,
+dengan `-movflags +faststart` supaya bisa diputar sebelum selesai
+terunduh. SSIM terhadap rekaman aslinya 0,94–0,97 alias tidak terlihat
+bedanya. Yang menentukan berat halaman bukan videonya, karena
+`preload="none"` menahan unduhan sampai orang menekan play: muat awal
+halaman ini sekitar 830 KB, dan 0 byte video ikut terkirim.
+
+Menambah video baru — rasio tegak maupun mendatar sama-sama boleh:
+
+```bash
+ffmpeg -i mentah.mp4 -c:v libx264 -profile:v main -level 4.0 -preset slow \
+  -crf 28 -pix_fmt yuv420p -c:a aac -b:a 64k -ac 1 \
+  -movflags +faststart public/media/nama.mp4
+ffmpeg -ss 1 -i public/media/nama.mp4 -frames:v 1 -q:v 5 \
+  public/media/nama-poster.jpg
+ffprobe -v error -show_entries stream=width,height -of csv=p=0:nk=1 \
+  public/media/nama.mp4
+```
+
+Lalu daftarkan di `evidenceVideos` (`src/content/product-data.ts`)
+lengkap dengan `poster`, `width`, dan `height`. Poster WAJIB: tanpa itu
+video tampil sebagai kotak gelap kosong.

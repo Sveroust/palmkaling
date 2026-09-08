@@ -99,10 +99,43 @@ export const evidencePhotos = [
   { src: "/media/timbangan-100kg.jpg", captionKey: "weighing", width: 896, height: 1200 },
 ] as const;
 
-/** Video pendek proses. `captionKey` → dictionary supply.videos.<captionKey> */
+/**
+ *  Video pendek proses. `captionKey` → dictionary supply.videos.<captionKey>
+ *
+ *  Rasio bebas: klip tegak maupun mendatar sama-sama boleh. Halaman
+ *  membaca `width`/`height` di bawah dan menyesuaikan lebar kotaknya
+ *  sendiri, jadi tidak ada rasio yang dipaksakan ke berkasnya.
+ *
+ *  ⚠️ `poster` WAJIB ada. Dengan `preload="none"` peramban tidak
+ *  mengunduh apa pun sampai orang menekan play, jadi tanpa poster ia
+ *  tidak punya frame maupun rasio: kotaknya jatuh ke ukuran bawaan
+ *  <video> (300x150) dan tampil sebagai persegi gelap kosong — persis
+ *  seperti video yang gagal dimuat, padahal berkasnya sehat.
+ *
+ *  `width`/`height` sama alasannya seperti pada foto: memesan ruang
+ *  supaya halaman tidak bergeser. Angkanya HARUS dimensi asli video.
+ *  Periksa dengan:
+ *  `ffprobe -v error -show_entries stream=width,height -of csv=p=0:nk=1 public/media/<berkas>`
+ *
+ *  Membuat poster (frame di detik 1, bukan 0 — frame pertama sering
+ *  masih gelap atau kabur):
+ *  `ffmpeg -ss 1 -i public/media/<berkas>.mp4 -frames:v 1 -q:v 5 public/media/<berkas>-poster.jpg`
+ */
 export const evidenceVideos = [
-  { src: "/media/gudang-sortir.mp4", captionKey: "warehouse" },
-  { src: "/media/inspeksi-kualitas.mp4", captionKey: "inspection" },
+  {
+    src: "/media/gudang-sortir.mp4",
+    poster: "/media/gudang-sortir-poster.jpg",
+    captionKey: "warehouse",
+    width: 464,
+    height: 832,
+  },
+  {
+    src: "/media/inspeksi-kualitas.mp4",
+    poster: "/media/inspeksi-kualitas-poster.jpg",
+    captionKey: "inspection",
+    width: 464,
+    height: 832,
+  },
 ] as const;
 
 /** Lembar spesifikasi resmi yang bisa diunduh importir. */

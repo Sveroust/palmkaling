@@ -91,8 +91,21 @@ export default async function SupplyPage({
 
       {/* ---------- VIDEO FASILITAS ----------
           Tanpa autoplay dan tanpa suara otomatis: video yang menyala sendiri
-          justru bikin orang menutup tab. preload="none" supaya 14 MB video
-          tidak ikut terunduh sampai pengunjung benar-benar menekan play. */}
+          justru bikin orang menutup tab. preload="none" supaya 5,3 MB video
+          tidak ikut terunduh sampai pengunjung benar-benar menekan play.
+
+          Pasangan wajib dari preload="none" adalah `poster`: tanpa unduhan,
+          peramban tidak punya frame maupun rasio video, jadi kotaknya jatuh
+          ke ukuran bawaan <video> (300x150) dan tampil sebagai persegi gelap
+          kosong — mirip video rusak, padahal berkasnya sehat. Poster memberi
+          gambar sekaligus rasio, dengan biaya ~24 KB.
+
+          Rasio tidak dipaksa: `width`/`height` diambil dari dimensi asli
+          berkas, jadi klip tegak tetap tegak dan klip mendatar tetap
+          mendatar. Yang menyesuaikan adalah lebar kotaknya. Klip tegak
+          dibatasi 20rem dan ditaruh di tengah — dibiarkan selebar kolom,
+          satu video jadi menara ~950 px yang mendorong keterangannya keluar
+          layar. Klip mendatar tidak punya masalah itu, jadi isi penuh kolom. */}
       <Section>
         <div className="max-w-2xl">
           <SectionTitle>{t.videos.title}</SectionTitle>
@@ -101,12 +114,22 @@ export default async function SupplyPage({
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2">
           {evidenceVideos.map((video) => (
-            <figure key={video.src}>
+            <figure
+              key={video.src}
+              className={
+                video.height > video.width
+                  ? "mx-auto w-full max-w-80" // tegak: dibatasi, ditengahkan
+                  : "w-full" // mendatar: isi penuh kolom
+              }
+            >
               <video
                 controls
                 preload="none"
                 playsInline
-                className="w-full border border-line bg-overlay"
+                poster={asset(video.poster)}
+                width={video.width}
+                height={video.height}
+                className="h-auto w-full border border-line bg-overlay"
               >
                 <source src={asset(video.src)} type="video/mp4" />
               </video>
