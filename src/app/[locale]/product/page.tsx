@@ -3,7 +3,8 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getDictionary } from "@/i18n/getDictionary";
 import { isLocale, locales } from "@/i18n/config";
-import { Section, Container, SectionTitle, Lede, SpecTable, Card, Eyebrow } from "@/components/ui";
+import Image from "next/image";
+import { Section, Container, SectionTitle, Lede, SpecTable, Card, Eyebrow, Caption } from "@/components/ui";
 import { WhatsAppCta } from "@/components/WhatsAppCta";
 import { PhotoGallery } from "@/components/PhotoGallery";
 import { asset } from "@/config/paths";
@@ -13,8 +14,10 @@ import {
   packingOptions,
   qualityPoints,
   evidencePhotos,
+  evidenceVideos,
   techDataSheet,
 } from "@/content/product-data";
+import { applications } from "@/content/applications";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -97,6 +100,120 @@ export default async function ProductPage({
             salah satu foto untuk melihatnya utuh tanpa terpotong 4:3. */}
         <div className="mt-10">
           <PhotoGallery photos={galleryPhotos} labels={dict.common.gallery} />
+        </div>
+      </Section>
+
+      {/* ---------- BISA DIBUAT APA ----------
+          Pembeli bahan mentah sering tidak tahu batas kegunaan barangnya.
+          Bagian ini menaikkan posisi dari "penjual biji rendaman" jadi
+          pemasok bahan baku lima industri — dan itu yang membuka pintu ke
+          pembeli farmasi serta kosmetik, yang harga per kilonya lain.
+
+          Catatan `note` WAJIB tetap terpasang. Fotonya ilustrasi kategori
+          buatan AI, bukan produk kami. Tanpa catatan itu, pembeli akan
+          meminta sample toples yang tidak pernah ada, dan kepercayaan
+          habis di kontak pertama. Ditaruh SEBELUM gambarnya, bukan sesudah,
+          supaya terbaca lebih dulu.
+
+          Kartunya dipesan lewat <dl> dan bukan <div>: tiap baris memang
+          pasangan istilah-dan-nilai, jadi pembaca layar mengumumkannya
+          sebagai pasangan, bukan dua teks yang berdiri sendiri. */}
+      <Section>
+        <div className="max-w-2xl">
+          <Eyebrow>{t.applications.eyebrow}</Eyebrow>
+          <SectionTitle>{t.applications.title}</SectionTitle>
+          <Lede className="mt-4">{t.applications.intro}</Lede>
+          <p className="mt-6 border-l-2 border-line-strong pl-4 text-sm leading-relaxed text-ink-faint">
+            {t.applications.note}
+          </p>
+        </div>
+
+        <div className="mt-12 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+          {applications.map((app) => {
+            const a = t.applications.items[app.key];
+            return (
+              <article key={app.key}>
+                <div className="relative aspect-4/3 w-full overflow-hidden border border-line bg-paper">
+                  <Image
+                    src={asset(app.src)}
+                    alt={a.name}
+                    width={app.width}
+                    height={app.height}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+                <p className="type-label mt-5 text-[0.7rem] text-sap-text">{a.sector}</p>
+                <h3 className="mt-2 font-display text-lg font-semibold leading-snug tracking-[-0.01em]">
+                  {a.name}
+                </h3>
+                <p className="mt-2 leading-relaxed text-ink-soft">{a.body}</p>
+                <dl className="mt-4 space-y-2 border-t border-line pt-4 text-sm">
+                  <div>
+                    <dt className="type-label text-xs text-ink-faint">
+                      {t.applications.marketsLabel}
+                    </dt>
+                    <dd className="mt-0.5 text-ink-soft">{a.markets}</dd>
+                  </div>
+                  <div>
+                    <dt className="type-label text-xs text-ink-faint">
+                      {t.applications.propertyLabel}
+                    </dt>
+                    <dd className="mt-0.5 text-ink-soft">{a.property}</dd>
+                  </div>
+                </dl>
+              </article>
+            );
+          })}
+        </div>
+      </Section>
+
+      {/* ---------- VIDEO FASILITAS ----------
+          Tanpa autoplay dan tanpa suara otomatis: video yang menyala
+          sendiri justru bikin orang menutup tab. preload="none" supaya
+          5,3 MB video tidak ikut terunduh sampai pengunjung benar-benar
+          menekan play.
+
+          Pasangan wajib dari preload="none" adalah `poster`: tanpa
+          unduhan, peramban tidak punya frame maupun rasio video, jadi
+          kotaknya jatuh ke ukuran bawaan <video> (300x150) dan tampil
+          sebagai persegi gelap kosong — mirip video rusak, padahal
+          berkasnya sehat. Poster memberi gambar sekaligus rasio.
+
+          Rasio tidak dipaksa: `width`/`height` diambil dari dimensi asli
+          berkas, jadi klip tegak tetap tegak dan klip mendatar tetap
+          mendatar. Yang menyesuaikan lebar kotaknya. Klip tegak dibatasi
+          20rem dan ditengahkan — dibiarkan selebar kolom, satu video jadi
+          menara ~950 px yang mendorong keterangannya keluar layar. */}
+      <Section tone="deep">
+        <div className="max-w-2xl">
+          <SectionTitle>{t.videos.title}</SectionTitle>
+          <Lede className="mt-4">{t.videos.intro}</Lede>
+        </div>
+
+        <div className="mt-10 grid gap-6 sm:grid-cols-2">
+          {evidenceVideos.map((video) => (
+            <figure
+              key={video.src}
+              className={
+                video.height > video.width
+                  ? "mx-auto w-full max-w-80" // tegak: dibatasi, ditengahkan
+                  : "w-full" // mendatar: isi penuh kolom
+              }
+            >
+              <video
+                controls
+                preload="none"
+                playsInline
+                poster={asset(video.poster)}
+                width={video.width}
+                height={video.height}
+                className="h-auto w-full border border-line bg-overlay"
+              >
+                <source src={asset(video.src)} type="video/mp4" />
+              </video>
+              <Caption>{t.videos[video.captionKey]}</Caption>
+            </figure>
+          ))}
         </div>
       </Section>
 

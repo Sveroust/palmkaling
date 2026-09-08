@@ -149,6 +149,57 @@
       "uniformity": "Random sampling for size uniformity",
       "weighing": "100 kg batch verified on a calibrated scale"
     },
+    "applications": {
+      "eyebrow": "DOWNSTREAM SPECTRUM",
+      "title": "What it becomes",
+      "intro": "Sugar palm fruit is more than a dessert ingredient. On the world market this arenga endosperm feeds five different industries — and each one uses a different property of the same fruit.",
+      "note": "Photographs in this section are AI-generated illustrations of downstream product categories. They are not products we manufacture — we supply the raw material.",
+      "marketsLabel": "Primary markets",
+      "propertyLabel": "Property used",
+      "items": {
+        "retail": {
+          "name": "Canned & jarred kaong",
+          "sector": "F&B export retail",
+          "body": "Whole kernels in light syrup, sold as kaong through Asian retail chains across the Americas and Europe. Used in fruit salads, fruit cocktails, and halo-halo.",
+          "markets": "United States, European Union, Australia",
+          "property": "Uniform whole kernels that hold their shape through sterilisation"
+        },
+        "cafe": {
+          "name": "Bingsu topping & boba alternative",
+          "sector": "Cafe & dessert",
+          "body": "Diced for Korean shaved ice and milk-based drinks. The chew holds up at cold temperatures without hardening, at a fraction of the calories of tapioca boba.",
+          "markets": "South Korea, Taiwan, Japan",
+          "property": "A chewy texture that stays stable when cold"
+        },
+        "diet": {
+          "name": "Drinkable fibre jelly",
+          "sector": "Functional food",
+          "body": "The galactomannan in sugar palm fruit forms a hydrocolloid gel, which is why it is used as the base for low-sugar pouch jellies that keep people full for longer.",
+          "markets": "South Korea, Japan",
+          "property": "Galactomannan as a gelling agent and soluble fibre"
+        },
+        "nutraceutical": {
+          "name": "Supplement raw material",
+          "sector": "Nutraceutical",
+          "body": "The supplement industry uses arenga galactomannan extract in capsule formulations. What they buy from us is the raw fruit, not the extract.",
+          "markets": "Germany, United States, South Korea",
+          "property": "Galactomannan polysaccharide content"
+        },
+        "cosmetic": {
+          "name": "Serum & sheet mask active",
+          "sector": "Cosmetics",
+          "body": "Cosmetic laboratories extract arenga polysaccharides as a water-binding ingredient for serums and sheet masks, a botanical alternative to synthetic humectants.",
+          "markets": "South Korea, Japan",
+          "property": "Water-binding polysaccharides"
+        }
+      }
+    },
+    "videos": {
+      "title": "See the facility",
+      "intro": "Two short clips, unedited: the collection warehouse with its sorting tables and soaking tubs, and a macro look at the fruit itself.",
+      "warehouse": "Warehouse, sorting tables, and soaking tubs",
+      "inspection": "Close-up: clarity, colour, and texture"
+    },
     "tds": {
       "title": "Technical data sheet",
       "body": "The full bilingual TDS as a PDF — hand it to your QC team before you ask for a sample.",
@@ -193,13 +244,7 @@
       }
     },
     "traceTitle": "Traceability",
-    "traceBody": "Every pail carries a lot code that identifies the harvest area and the boiling batch. If a claim is raised, the affected lot can be isolated instead of the whole shipment.",
-    "videos": {
-      "title": "See the facility",
-      "intro": "Two short clips, unedited: the collection warehouse with its sorting tables and soaking tubs, and a macro look at the fruit itself.",
-      "warehouse": "Warehouse, sorting tables, and soaking tubs",
-      "inspection": "Close-up: clarity, colour, and texture"
-    }
+    "traceBody": "Every pail carries a lot code that identifies the harvest area and the boiling batch. If a claim is raised, the affected lot can be isolated instead of the whole shipment."
   },
   "process": {
     "title": "How an order runs",

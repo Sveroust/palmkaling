@@ -149,6 +149,57 @@
       "uniformity": "Sampling acak untuk keseragaman ukuran",
       "weighing": "Batch 100 kg diverifikasi dengan timbangan terkalibrasi"
     },
+    "applications": {
+      "eyebrow": "SPEKTRUM HILIR",
+      "title": "Bisa dibuat apa",
+      "intro": "Kolang-kaling bukan cuma bahan kolak. Di pasar dunia, endosperma aren ini masuk ke lima industri yang berbeda — dan tiap industri memakai sifat yang berbeda dari buah yang sama.",
+      "note": "Foto di bagian ini ilustrasi kategori produk hilir, dibuat dengan bantuan AI. Bukan produk yang kami produksi — kami memasok bahan bakunya.",
+      "marketsLabel": "Pasar utama",
+      "propertyLabel": "Sifat yang dipakai",
+      "items": {
+        "retail": {
+          "name": "Kaong kalengan & toples",
+          "sector": "Ritel ekspor F&B",
+          "body": "Biji utuh dalam sirup ringan, dijual sebagai kaong di jaringan ritel Asia di Amerika dan Eropa. Dipakai untuk salad buah, koktail buah, dan halo-halo.",
+          "markets": "Amerika Serikat, Uni Eropa, Australia",
+          "property": "Biji utuh yang seragam dan tidak hancur saat disterilkan"
+        },
+        "cafe": {
+          "name": "Topping bingsu & pengganti boba",
+          "sector": "Kafe & dessert",
+          "body": "Dipotong dadu untuk es serut Korea dan minuman susu. Kenyalnya tidak mengeras di suhu dingin, dan kalorinya jauh di bawah boba tapioka.",
+          "markets": "Korea Selatan, Taiwan, Jepang",
+          "property": "Tekstur kenyal yang stabil di suhu dingin"
+        },
+        "diet": {
+          "name": "Jeli serat siap minum",
+          "sector": "Pangan fungsional",
+          "body": "Galaktomanan pada kolang-kaling membentuk gel hidrokoloid, sehingga dipakai sebagai basis jeli kantong rendah gula yang menahan rasa kenyang lebih lama.",
+          "markets": "Korea Selatan, Jepang",
+          "property": "Galaktomanan sebagai pembentuk gel dan serat larut"
+        },
+        "nutraceutical": {
+          "name": "Bahan baku suplemen",
+          "sector": "Nutraseutikal",
+          "body": "Industri suplemen memakai ekstrak galaktomanan aren dalam sediaan kapsul. Yang dibeli dari kami bahan mentahnya, bukan ekstraknya.",
+          "markets": "Jerman, Amerika Serikat, Korea Selatan",
+          "property": "Kandungan polisakarida galaktomanan"
+        },
+        "cosmetic": {
+          "name": "Bahan aktif serum & sheet mask",
+          "sector": "Kosmetik",
+          "body": "Laboratorium kosmetik mengekstrak polisakarida aren sebagai bahan pengikat air pada serum dan sheet mask, sebagai alternatif botani untuk humektan sintetis.",
+          "markets": "Korea Selatan, Jepang",
+          "property": "Polisakarida pengikat air"
+        }
+      }
+    },
+    "videos": {
+      "title": "Lihat fasilitasnya",
+      "intro": "Dua klip pendek tanpa polesan: gudang penampungan dengan meja sortasi dan wadah perendaman, serta tampilan makro buahnya sendiri.",
+      "warehouse": "Gudang, meja sortasi, dan wadah perendaman",
+      "inspection": "Close-up: kejernihan, warna, dan tekstur"
+    },
     "tds": {
       "title": "Lembar spesifikasi teknis",
       "body": "TDS dwibahasa lengkap dalam PDF — serahkan ke tim QC sebelum meminta sampel.",
@@ -193,13 +244,7 @@
       }
     },
     "traceTitle": "Ketertelusuran",
-    "traceBody": "Setiap ember membawa kode lot yang menunjukkan wilayah panen dan batch perebusannya. Kalau ada klaim, lot yang bermasalah bisa diisolasi tanpa menyentuh seluruh pengiriman.",
-    "videos": {
-      "title": "Lihat fasilitasnya",
-      "intro": "Dua klip pendek tanpa polesan: gudang penampungan dengan meja sortasi dan wadah perendaman, serta tampilan makro buahnya sendiri.",
-      "warehouse": "Gudang, meja sortasi, dan wadah perendaman",
-      "inspection": "Close-up: kejernihan, warna, dan tekstur"
-    }
+    "traceBody": "Setiap ember membawa kode lot yang menunjukkan wilayah panen dan batch perebusannya. Kalau ada klaim, lot yang bermasalah bisa diisolasi tanpa menyentuh seluruh pengiriman."
   },
   "process": {
     "title": "Alur satu order",
