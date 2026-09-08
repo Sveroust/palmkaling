@@ -151,6 +151,29 @@ muncul sebagai **( belum diisi )**.
 Isi datanya → hapus namanya dari `pendingFields` → penandanya hilang.
 Kalau daftarnya kosong, pita "Draf" ikut hilang dan situs siap terbit.
 
+## Lembar spesifikasi (TDS)
+
+`public/media/technical-data-sheet.pdf` di-generate dari
+`scripts/spec-sheet/spec-sheet.html`:
+
+```bash
+bash scripts/spec-sheet/render.sh
+```
+
+Jangan pernah membuatnya lewat menu Print to PDF di browser. Dialog
+cetak menyisipkan header dan footer sendiri, dan versi lama kena
+semuanya: tanggal cetak di kiri atas, alamat `file:///Users/...`
+sumbernya di kiri bawah, nomor halaman di kanan bawah, plus baris
+`Folder Reference: /Users/user/Downloads/...` di dalam kontennya.
+Empat-empatnya membocorkan isi komputer ke calon pembeli. Skrip di
+atas memakai `--no-pdf-header-footer`, dan di akhir ia memeriksa
+hasilnya: kalau `file:///`, `/Users/`, atau `Folder Reference` masih
+muncul, skripnya gagal alih-alih menghasilkan PDF yang terkirim.
+
+Angka di lembar itu HARUS sama dengan `src/content/product-data.ts`
+dan `src/config/company.ts`. Lembar spesifikasi yang berbeda dari
+situsnya lebih merugikan daripada tidak punya lembar spesifikasi.
+
 ## Catatan ukuran
 
 `public/media/` berisi sekitar 6,5 MB, sebagian besar dua video

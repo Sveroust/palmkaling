@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>PALMKALING — Export Product Specification Sheet</title>
+<!--
+  ============================================================
+   SUMBER PDF LEMBAR SPESIFIKASI (TDS)
+  ============================================================
+   Ini sumber untuk public/media/technical-data-sheet.pdf.
+   Render dengan: bash scripts/spec-sheet/render.sh
+
+   KENAPA FILE INI ADA. PDF sebelumnya hasil "Print to PDF" dari
+   browser, jadi ikut terbawa:
+     - tanggal cetak di kiri atas
+     - "file:///Users/user/.gemini/..." di kiri bawah
+     - nomor halaman "1/1" di kanan bawah
+     - "Folder Reference: /Users/user/Downloads/EKSPOR KOLANG KALING/"
+   Empat-empatnya membocorkan isi komputer ke calon pembeli. Sumber
+   HTML aslinya sudah hilang, dan teksnya tidak bisa dibedah dari PDF
+   lama karena fontnya subset dengan encoding kustom. Jadi dibangun
+   ulang di sini, dan render.sh mematikan header/footer browser.
+
+   ANGKANYA JANGAN DIKETIK ULANG DI SINI kalau berubah. Sumber
+   kebenarannya src/content/product-data.ts dan src/config/company.ts.
+   Kalau di sana berubah, samakan di sini lalu render ulang — lembar
+   spesifikasi yang berbeda dari situsnya lebih merugikan daripada
+   tidak punya lembar spesifikasi.
+
+   Bagian 5 sengaja TIDAK memuat nama berkas internal. Versi lama
+   menulis "02_Video_Fasilitas_Gudang..." dan "05 s/d 08_Foto_Ukur..."
+   yang bagi pembeli tidak berarti apa-apa dan terbaca seperti indeks
+   internal yang bocor. Sekarang bukti itu dirujuk lewat alamat
+   halamannya, yang memang bisa dibuka pembeli.
+
+   Email TIDAK dicantumkan: masih terdaftar di `pendingFields`
+   (src/config/company.ts), artinya belum dikonfirmasi. Jangan
+   menaruh data yang belum pasti di dokumen yang dikirim ke pembeli.
+  ============================================================
+-->
+<style>
+  @page { size: A4; margin: 0; }
+
+  :root{
+    --paper:#ffffff; --ink:#16211a; --soft:#4a5750; --faint:#606a64;
+    --palm:#1e4030; --palm-deep:#142a20; --sap:#b8813a; --sap-text:#89602b;
+    --line:#ddd5c4; --line-strong:#c6bca6; --wash:#f7f4ec;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  html,body{ background:var(--paper); }
+  body{
+    width:210mm; min-height:297mm;
+    padding:13mm 14mm 11mm;
+    font-family:"Inter","Helvetica Neue",Arial,sans-serif;
+    font-size:7.4pt; line-height:1.42; color:var(--ink);
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+  .display{ font-family:"Plus Jakarta Sans","Inter",Arial,sans-serif; }
+
+  /* ---------- kepala ---------- */
+  header{ border-bottom:1.6pt solid var(--palm); padding-bottom:3.5mm; }
+  .masthead{ display:flex; justify-content:space-between; align-items:flex-start; gap:8mm; }
+  .brand{ font-size:16pt; font-weight:800; letter-spacing:.16em; color:var(--palm); line-height:1; }
+  .brand-sub{ margin-top:1.4mm; font-size:6pt; letter-spacing:.22em; text-transform:uppercase; color:var(--sap-text); }
+  .doc-meta{ text-align:right; font-size:6.4pt; line-height:1.6; color:var(--faint); }
+  .doc-meta b{ display:block; font-size:7.6pt; color:var(--ink); letter-spacing:.04em; }
+  h1{ margin-top:4mm; font-size:11.4pt; font-weight:700; letter-spacing:.01em; color:var(--ink); }
+  .subject{ margin-top:1.2mm; font-size:7.6pt; color:var(--soft); }
+
+  /* ---------- kisi dua kolom ---------- */
+  .grid{ display:grid; grid-template-columns:1fr 1fr; gap:0 9mm; margin-top:6mm; }
+  section{ break-inside:avoid; margin-bottom:5.5mm; }
+  h2{
+    font-size:6.6pt; font-weight:700; letter-spacing:.15em; text-transform:uppercase;
+    color:var(--palm); padding-bottom:1.3mm; border-bottom:.7pt solid var(--line-strong);
+  }
+  h2 .n{ color:var(--sap); margin-right:1.6mm; }
+
+  dl{ margin-top:2mm; }
+  .row{ display:grid; grid-template-columns:31mm 1fr; gap:0 3mm; padding:1.05mm 0; border-bottom:.4pt solid var(--line); }
+  .row:last-child{ border-bottom:0; }
+  dt{ color:var(--faint); }
+  dd{ color:var(--ink); }
+  dd .alt{ color:var(--faint); }
+  .ok{ color:var(--palm); font-weight:600; }
+
+  /* ---------- tabel bukti ---------- */
+  .evidence{ margin-top:1mm; }
+  table{ width:100%; border-collapse:collapse; margin-top:2mm; }
+  th{
+    text-align:left; font-size:6pt; font-weight:700; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--faint); padding:0 3mm 1.4mm 0; border-bottom:.7pt solid var(--line-strong);
+  }
+  td{ padding:1.5mm 3mm 1.5mm 0; border-bottom:.4pt solid var(--line); vertical-align:top; }
+  td:last-child, th:last-child{ padding-right:0; }
+  .ev-name{ font-weight:600; white-space:nowrap; }
+
+  .note{
+    margin-top:3mm; background:var(--wash); border-left:1.6pt solid var(--sap);
+    padding:2.4mm 3.2mm; font-size:6.6pt; color:var(--soft);
+  }
+
+  /* ---------- kaki ---------- */
+  footer{ margin-top:auto; padding-top:3.2mm; border-top:.7pt solid var(--line-strong); }
+  .legal{ display:grid; grid-template-columns:repeat(4,1fr); gap:0 6mm; font-size:6.2pt; line-height:1.55; }
+  .legal .k{ color:var(--faint); letter-spacing:.1em; text-transform:uppercase; font-size:5.6pt; }
+  .legal .v{ color:var(--ink); }
+  .rule{ margin-top:3mm; padding-top:2.2mm; border-top:.4pt solid var(--line); display:flex; justify-content:space-between; font-size:5.9pt; color:var(--faint); }
+  body{ display:flex; flex-direction:column; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="masthead">
+    <div>
+      <div class="brand display">PALMKALING</div>
+      <div class="brand-sub display">Premium Sugar Palm Fruit Export</div>
+    </div>
+    <div class="doc-meta display">
+      <b>SPEC CODE: EXP-KLK-2026</b>
+      Product Technical Data Sheet<br>
+      Revision 2 · September 2026
+    </div>
+  </div>
+  <h1 class="display">Export Product Specification Sheet</h1>
+  <p class="subject">
+    Indonesian Sugar Palm Fruit — <i>Kolang-Kaling</i> / Kaong · Export Grade Super Jumbo
+  </p>
+</header>
+
+<div class="grid">
+
+  <section>
+    <h2 class="display"><span class="n">01</span>General product identification</h2>
+    <dl>
+      <div class="row"><dt>Product name</dt><dd>Sugar Palm Fruit <span class="alt">(Kolang-Kaling / Kaong)</span></dd></div>
+      <div class="row"><dt>Botanical name</dt><dd><i>Arenga pinnata</i> (Wurmb) Merr.</dd></div>
+      <div class="row"><dt>Part used</dt><dd>Endosperm of the immature fruit</dd></div>
+      <div class="row"><dt>HS code</dt><dd>2008.99.90 · 0802.99.00</dd></div>
+      <div class="row"><dt>Country of origin</dt><dd>Indonesia <span class="alt">(West Java &amp; Banten)</span></dd></div>
+      <div class="row"><dt>Processing</dt><dd>Boiled, peeled, cleaned, sterilised</dd></div>
+      <div class="row"><dt>Grade</dt><dd>Super Jumbo / Grade A Export Quality</dd></div>
+    </dl>
+  </section>
+
+  <section>
+    <h2 class="display"><span class="n">03</span>Chemical &amp; food safety compliance</h2>
+    <dl>
+      <div class="row"><dt>Chlorine / bleach</dt><dd class="ok">Negative — 0.00%</dd></div>
+      <div class="row"><dt>Formalin</dt><dd class="ok">Not detected</dd></div>
+      <div class="row"><dt>Alum <span class="alt">(tawas)</span></dt><dd class="ok">Not detected</dd></div>
+      <div class="row"><dt>Heavy metals</dt><dd>Within BPOM &amp; CODEX limits</dd></div>
+      <div class="row"><dt>Preserving medium</dt><dd>Sterile water · mild brine · food-grade citric acid</dd></div>
+      <div class="row"><dt>Additives</dt><dd>None — no synthetic whitener or preservative</dd></div>
+      <div class="row"><dt>Test basis</dt><dd>Per-shipment COA from an accredited laboratory</dd></div>
+    </dl>
+  </section>
+
+  <section>
+    <h2 class="display"><span class="n">02</span>Physical &amp; dimensional parameters</h2>
+    <dl>
+      <div class="row"><dt>Appearance</dt><dd>Elliptical whole kernel, clean and glossy</dd></div>
+      <div class="row"><dt>Colour</dt><dd>Natural translucent white</dd></div>
+      <div class="row"><dt>Texture</dt><dd>Firm, chewy, resilient bite</dd></div>
+      <div class="row"><dt>Odour</dt><dd>Fresh sugar palm — no fermentation, no chemical note</dd></div>
+      <div class="row"><dt>Length</dt><dd>30 – 35 mm <span class="alt">(3.0 – 3.5 cm)</span></dd></div>
+      <div class="row"><dt>Width</dt><dd>20 – 25 mm <span class="alt">(2.0 – 2.5 cm)</span></dd></div>
+      <div class="row"><dt>Thickness</dt><dd>10 – 15 mm <span class="alt">(1.0 – 1.5 cm)</span></dd></div>
+      <div class="row"><dt>Defect tolerance</dt><dd>&lt; 1.5% broken or off-size</dd></div>
+    </dl>
+  </section>
+
+  <section>
+    <h2 class="display"><span class="n">04</span>Packaging, storage &amp; reefer logistics</h2>
+    <dl>
+      <div class="row"><dt>Primary packaging</dt><dd>Food-grade HDPE drum, 50 kg / 100 kg, double liner</dd></div>
+      <div class="row"><dt>Optional packaging</dt><dd>Vacuum barrier bag, 1 / 5 / 10 kg</dd></div>
+      <div class="row"><dt>Storage &amp; transport</dt><dd>Reefer +2 °C to +5 °C, continuous cold chain</dd></div>
+      <div class="row"><dt>Container loading</dt><dd>20ft ≈ 15 – 18 MT · 40ft ≈ 24 – 26 MT</dd></div>
+      <div class="row"><dt>Shelf life</dt><dd>6 – 12 months under cold storage</dd></div>
+      <div class="row"><dt>Minimum order</dt><dd>1 × 20ft reefer <span class="alt">(≈ 18 MT)</span></dd></div>
+      <div class="row"><dt>Incoterms</dt><dd>FOB · CFR · CIF</dd></div>
+      <div class="row"><dt>Port of loading</dt><dd>Tanjung Priok, Jakarta <span class="alt">(IDJKT)</span></dd></div>
+    </dl>
+  </section>
+
+</div>
+
+<section class="evidence">
+  <h2 class="display"><span class="n">05</span>Inspection evidence available for review</h2>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:46mm">Evidence</th>
+        <th style="width:38mm">Inspection target</th>
+        <th>Parameters verified</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="ev-name">Facility &amp; sorting video</td>
+        <td>Upstream warehouse</td>
+        <td>Processing facility, hygienic sorting tables, soaking and collection vessels.</td>
+      </tr>
+      <tr>
+        <td class="ev-name">Physical inspection video</td>
+        <td>Kernel condition</td>
+        <td>Natural clarity, sterile soaking water, chew and size consistency.</td>
+      </tr>
+      <tr>
+        <td class="ev-name">Batch scale test photo</td>
+        <td>Tonnage verification</td>
+        <td>Mechanical scale, 100 kg capacity, 200 g graduation.</td>
+      </tr>
+      <tr>
+        <td class="ev-name">Dimensional calibration photos</td>
+        <td>Grade confirmation</td>
+        <td>Length, width and thickness measured against a millimetre rule.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note">
+    All inspection media above can be viewed at <b>sveroust.github.io/palmkaling</b> under
+    Product and Supply Network. Physical samples: 1 kg free of charge, buyer covers courier.
+    Specifications are indicative and confirmed per contract.
+  </p>
+</section>
+
+<footer>
+  <div class="legal">
+    <div>
+      <div class="k display">Legal entity</div>
+      <div class="v">CV Puji Jaya Putra</div>
+      <div class="v">Est. 2020</div>
+    </div>
+    <div>
+      <div class="k display">Business ID (NIB)</div>
+      <div class="v">0220001810988</div>
+      <div class="v">KBLI 46339</div>
+    </div>
+    <div>
+      <div class="k display">Office</div>
+      <div class="v">Kp. Telajung, Cikarang Barat</div>
+      <div class="v">Kab. Bekasi, Jawa Barat, Indonesia</div>
+    </div>
+    <div>
+      <div class="k display">Contact</div>
+      <div class="v">WhatsApp +62 877-8298-0769</div>
+      <div class="v">sveroust.github.io/palmkaling</div>
+    </div>
+  </div>
+  <div class="rule">
+    <span>Document code SPEC-KLK-IDN-2026 · Export grade B2B technical data sheet</span>
+    <span>PALMKALING® · CV Puji Jaya Putra</span>
+  </div>
+</footer>
+
+</body>
+</html>
